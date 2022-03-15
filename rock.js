@@ -71,36 +71,32 @@ function game() {
     let computerScore = 0;
     let playerScore = 0;
     for (let i = 0; i < 5; i++) {
+        if (i <= 0) {
+            console.log("Round 1!!!!!")
+        }
+        else {
         console.log("round " + (i + 1) + "!!!!!")
-        x = playRound();
-        if (x = "tie") {
-            console.log("tie");
-            console.log(i);
-            i = i - 1;
-            console.log(i);
+        }
+        let x = playRound()
+            if (x == "tie") {
+                i = i-1
+            }
+            else if (x == "won") {
+                ++playerScore
+            }
+            else if (x == "lost") {
+                ++computerScore
+            }
+    }
+    if (playerScore > computerScore) {
+        console.log("You won!!!! Here are the final scores: ")
+    }
+    else {
+        console.log("You lost :( Here are the final scores: ")
+    }
+    console.log(`Computer score: ${computerScore}. Player score: ${playerScore}.`)
 
-        }
-        else if (x = "won") {
-            playerScore++;
-            console.log("won");
-            console.log("player score");
-            console.log(playerScore);
-            console.log(i);
-        }
-        else if (x = "lost") {
-            computerScore++;
-            console.log("lost");
-            console.log("comp score");
-            console.log(computerScore);
-            console.log(i);
-        }
-    }
-    if (computerScore > playerScore) {
-        console.log(`You lost! The computer beat you ${computerScore} to ${playerScore}. :(`)
-    }
-    else if (playerScore > computerScore) {
-        console.log(`You won!!! You beat the computer ${playerScore} to ${computerScore}!!!`)
-    }
 }
+
 
 game()
