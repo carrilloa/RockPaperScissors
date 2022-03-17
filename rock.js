@@ -27,7 +27,7 @@ function playRound() {
     if (y == 4) {
         playRound();
     }
-    if (x == y) {
+    else if (x == y) {
         if (x == 1) {
             console.log("The computer chose rock. It's a tie! Play again! ");
             return "tie";
@@ -41,7 +41,7 @@ function playRound() {
             return "tie";
         }
     }
-    if (x == 1 && y == 2) {
+    else if (x == 1 && y == 2) {
         console.log("The computer chose rock. You won! Paper beats rock! ");
         return "won";
     }
@@ -64,6 +64,10 @@ function playRound() {
     else if (x == 3 && y == 2) {
         console.log("The computer chose scissors. You lost! Scissors beats paper. ");
         return "lost";
+    }
+    else {
+        console.log(y)
+        console.log("Something went wrong... ")
     }
 }
 
@@ -97,6 +101,7 @@ function game() {
     console.log(`Computer score: ${computerScore}. Player score: ${playerScore}.`)
 
 }
+
 
 
 game()
